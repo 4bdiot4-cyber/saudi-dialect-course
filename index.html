@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Dialect Mastery - Learn Saudi Arabic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            direction: ltr;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .lesson-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .lesson-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        .lesson-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .lesson-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+        .vocab-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .vocab-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+        .arabic {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            direction: rtl;
+        }
+        .transliteration {
+            color: #764ba2;
+            font-style: italic;
+        }
+        .english {
+            color: #666;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .progress-bar {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: white;
+            height: 100%;
+            transition: width 0.5s;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇸🇦 Saudi Dialect Mastery</h1>
+            <p>Master Saudi Arabic - From Zero to Fluent</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%" id="progressBar"></div>
+            </div>
+        </header>
+
+        <div class="course-grid">
+            <div class="lesson-card" onclick="startLesson(1)">
+                <h2>Lesson 1: Greetings</h2>
+                <p>Learn essential Saudi greetings and how to introduce yourself</p>
+                <span class="lesson-badge">Beginner</span>
+                <span class="lesson-badge">10 min</span>
+                <button>Start Learning</button>
+            </div>
+
+            <div class="lesson-card" onclick="startLesson(2)">
+                <h2>Lesson 2: Daily Phrases</h2>
+                <p>Common expressions you'll use every single day</p>
+                <span class="lesson-badge">Beginner</span>
+                <span class="lesson-badge">15 min</span>
+                <button>Start Learning</button>
+            </div>
+
+            <div class="lesson-card" onclick="startLesson(3)">
+                <h2>Lesson 3: Food & Dining</h2>
+                <p>Order food, ask for recommendations, and navigate restaurants</p>
+                <span class="lesson-badge">Intermediate</span>
+                <span class="lesson-badge">20 min</span>
+                <button>Start Learning</button>
+            </div>
+
+            <div class="lesson-card" onclick="startLesson(4)">
+                <h2>Lesson 4: Transportation</h2>
+                <p>Directions, taxis, and getting around Saudi cities</p>
+                <span class="lesson-badge">Intermediate</span>
+                <span class="lesson-badge">15 min</span>
+                <button>Start Learning</button>
+            </div>
+
+            <div class="lesson-card" onclick="startLesson(5)">
+                <h2>Lesson 5: Work & Business</h2>
+                <p>Professional phrases for office and business settings</p>
+                <span class="lesson-badge">Advanced</span>
+                <span class="lesson-badge">25 min</span>
+                <button>Start Learning</button>
+            </div>
+
+            <div class="lesson-card" onclick="startLesson(6)">
+                <h2>Lesson 6: Social Life</h2>
+                <p>Making friends, invitations, and casual conversations</p>
+                <span class="lesson-badge">Intermediate</span>
+                <span class="lesson-badge">20 min</span>
+                <button>Start Learning</button>
+            </div>
+        </div>
+
+        <div class="vocab-section">
+            <h2 style="color: #667eea; margin-bottom: 20px;">Essential Vocabulary</h2>
+            
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">السلام عليكم</div>
+                    <div class="transliteration">As-salamu alaykum</div>
+                </div>
+                <div class="english">Peace be upon you (Hello)</div>
+            </div>
+
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">كيف حالك؟</div>
+                    <div class="transliteration">Kayf halak?</div>
+                </div>
+                <div class="english">How are you?</div>
+            </div>
+
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">شكراً</div>
+                    <div class="transliteration">Shukran</div>
+                </div>
+                <div class="english">Thank you</div>
+            </div>
+
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">يلا</div>
+                    <div class="transliteration">Yalla</div>
+                </div>
+                <div class="english">Let's go / Come on</div>
+            </div>
+
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">إن شاء الله</div>
+                    <div class="transliteration">In sha Allah</div>
+                </div>
+                <div class="english">God willing / Hopefully</div>
+            </div>
+
+            <div class="vocab-item">
+                <div>
+                    <div class="arabic">ماشي</div>
+                    <div class="transliteration">Mashi</div>
+                </div>
+                <div class="english">Okay / Alright</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let completedLessons = 0;
+        
+        function startLesson(lessonNum) {
+            alert(`Starting Lesson ${lessonNum}!\n\nThis interactive lesson feature will be available in the full version.\n\nFor now, explore the vocabulary section below!`);
+            completedLessons++;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = (completedLessons / 6) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Add click sound effect simulation
+        document.querySelectorAll('.lesson-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#f8f9fa';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</body>
+</html>
